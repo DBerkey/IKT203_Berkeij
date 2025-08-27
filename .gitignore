@@ -42,4 +42,6 @@
 
 # .vscode
 .vscode/
-.build/
+
+# CMake build directory
+build/
