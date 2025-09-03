@@ -1,8 +1,3 @@
-
-// ...existing code...
-
-
-
 #include <string>
 #include <iostream>
 #include <functional>
