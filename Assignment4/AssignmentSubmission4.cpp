@@ -342,7 +342,7 @@ std::string GenerateAccountNumber(std::mt19937& gen) {
 }
 
 // Generate random timestamp within 2024
-time_t GenerateRandom2024Timestamp(std::mt19937& gen) {
+time_t GenerateRandomTimestamp(std::mt19937& gen) {
     // January 1, 2024 00:00:00 UTC
     struct tm tm2024start = {};
     tm2024start.tm_year = 124; // 2024 - 1900
@@ -531,7 +531,7 @@ int main() {
         for (int j = 0; j < accountsForThisName && arraySize < maxAccounts; j++) {
             std::string accountNumber = GenerateAccountNumber(gen);
             EBankAccountType accountType = GenerateRandomAccountType(gen);
-            time_t timestamp = GenerateRandom2024Timestamp(gen);
+            time_t timestamp = GenerateRandomTimestamp(gen);
             
             TBankAccount* account = new TBankAccount(accountNumber, accountType, 
                                                    firstName, lastName, timestamp);
