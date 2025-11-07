@@ -1,6 +1,7 @@
 // Author: Douwe Berkeij
 // Date: 04-11-2025
 // Assignment 5: The Algorithmic Organizer
+// AI use: For this assignment there was made use of github copilot with bug fixes.
 
 #include <random>
 #include <string>
@@ -169,18 +170,19 @@ std::string GenerateAccountNumber(std::mt19937& gen) {
 
 // Generate random timestamp
 time_t GenerateRandomTimestamp(std::mt19937& gen) {
-	struct tm tm2024start = {};
-	tm2024start.tm_year = 125;
-	tm2024start.tm_mon = 0;
-	tm2024start.tm_mday = 1;
-	time_t start2024 = mktime(&tm2024start);
-	struct tm tm2024end = {};
-	tm2024end.tm_year = 124;
-	tm2024end.tm_mon = 11;
-	tm2024end.tm_mday = 31;
-	tm2024end.tm_hour = 23; tm2024end.tm_min = 59; tm2024end.tm_sec = 59;
-	time_t end2024 = mktime(&tm2024end);
-	std::uniform_int_distribution<time_t> dis(start2024, end2024);
+	struct tm tm2025start = {};
+	// tm_year is years since 1900; 125 -> 2025.
+	tm2025start.tm_year = 125;
+	tm2025start.tm_mon = 0;
+	tm2025start.tm_mday = 1;
+	time_t start2025 = mktime(&tm2025start);
+	struct tm tm2025end = {};
+	tm2025end.tm_year = 125;
+	tm2025end.tm_mon = 11;
+	tm2025end.tm_mday = 31;
+	tm2025end.tm_hour = 23; tm2025end.tm_min = 59; tm2025end.tm_sec = 59;
+	time_t end2025 = mktime(&tm2025end);
+	std::uniform_int_distribution<time_t> dis(start2025, end2025);
 	return dis(gen);
 }
 
